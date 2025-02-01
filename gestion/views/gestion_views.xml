@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<odoo>
+ <record id="view_tree_filiere" model="ir.ui.view">
+   <field name="name">Liste des filieres</field>
+   <field name="model">gestion.filiere</field>
+   <field name="arch" type="xml">
+     <tree>
+	<field name="ID_filiere"/>
+	<field name="intitule"/>
+	<field name="code"/>
+	<field name="cycle"/>
+     </tree>
+    </field>
+ </record>
+ 
+  <record id="view_form_filiere" model="ir.ui.view">
+   <field name="name">Formulaire Filière</field>
+   <field name="model">gestion.filiere</field>
+   <field name="arch" type="xml">
+     <form>
+	<header>
+      <button string="Préparatoire / Ingénieur" 
+              type="object"
+              name="changerCycle"
+              class="btn-primary"/>
+  </header>
+	<sheet>
+	    <group>
+	      <group>
+		    <field name="ID_filiere"/>
+	        <field name="intitule"/>
+	      </group>
+		  <group>
+		    <field name="code"/>
+		    <field name="cycle"/>
+	      </group>
+	    </group>
+	</sheet>
+     </form>
+    </field>
+ </record>
+
+  <record id="view_tree_etudiant" model="ir.ui.view">
+   <field name="name">Liste des Etudiants</field>
+   <field name="model">gestion.etudiant</field>
+   <field name="arch" type="xml">
+     <tree>
+	<field name="NumApogee"/>
+	<field name="Nom"/>
+	<field name="Prenom"/>
+	<field name="Email"/>
+  <field name="Tel"/>
+	<field name="Ville"/>
+	<field name="Image"/>
+	<field name="filiere_id"/>
+     </tree>
+    </field>
+ </record>
+
+ <record id="view_form_étudiants" model="ir.ui.view">
+   <field name="name">Formulaire Etudiants</field>
+   <field name="model">gestion.etudiant</field>
+   <field name="arch" type="xml">
+     <form>
+     <h2>Formulaire Gestion des étudiants</h2>
+	<header>
+  </header>
+	<sheet>
+  <notebook>
+    <page string="Informations Générales">
+	    <group>
+	      <group>
+		    <field name="NumApogee"/>
+	      </group>
+		  <group>
+		    <field name="Nom"/>
+		    <field name="Prenom"/>
+	      </group>
+         <group>
+		    <field name="Email"/>
+		    <field name="Tel"/>
+	      </group>
+                 <group>
+		    <field name="Ville"/>
+		    <field name="filiere_id"/>
+	      </group>
+	    </group>
+        </page>
+            <page string="Autres Informations">
+        <group>
+		    <field name="Image"/>
+         <field name="filiere_id" string="Filière" widget="many2one"/>
+	      </group>
+            </page>
+        </notebook>
+	</sheet>
+     </form>
+    </field>
+ </record>
+
+ <record id="view_kanban_etudiants" model="ir.ui.view">
+        <field name="name">Kanban Etudiants</field>
+        <field name="model">gestion.etudiant</field>
+        <field name="arch" type="xml">
+<kanban>
+                <templates>
+                    <!-- Modèle Kanban pour chaque étudiant -->
+                    <t t-name="kanban-box">
+                      <field name="Nom"/>
+                      <field name="Image"/>
+                      <field name="Prenom"/>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+ </odoo>

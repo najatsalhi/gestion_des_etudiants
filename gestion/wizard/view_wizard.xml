@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<odoo>
+<record id="view_my_wizard_form" model="ir.ui.view">
+    <field name="name">my.wizard.form</field>
+    <field name="model">gestion.wizard</field>
+    <field name="arch" type="xml">
+        <form string="Wizard Example">
+            <group>
+                <field name="date_start" string="Date Début"/>
+                <field name="date_end" string="Date Fin"/>
+            </group>
+            <footer>
+                <button string="Confirm" type="object" name="confirm_action" class="btn-primary"/>
+                <button string="Cancel" class="btn-secondary" special="cancel"/>
+            </footer>
+        </form>
+    </field>
+</record>
+
+    <record id="view_wizard_afficher_etudiants" model="ir.ui.view">
+        <field name="name">wizard.afficher.etudiants.form</field>
+        <field name="model">gestion.wizard_afficher_etudiants</field>
+        <field name="arch" type="xml">
+            <form string="Afficher les étudiants par filière">
+                <group>
+                    <field name="filiere_id"/>
+                </group>
+                <group>
+                    <field name="etudiant_ids" nolabel="3">
+                        <tree style="height: 300px; width: 100%;">
+                            <field name="num_apogee"/>
+                            <field name="nom"/>
+                            <field name="prenom"/>
+                            <field name="email"/>
+                            <field name="ville"/>
+                        </tree>
+                    </field>
+                </group>
+                <footer>
+                    <button string="Fermer" class="btn-primary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

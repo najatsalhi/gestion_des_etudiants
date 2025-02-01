@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_filiere_user,filiereUser,model_gestion_filiere,gestion_group_user,1,0,0,0
+access_filiere_manager,filiereManager,model_gestion_filiere,gestion_group_manager,1,1,1,1
+access_etudiant_user,EtudiantUser,model_gestion_etudiant,gestion_group_user,1,0,0,0
+access_etudiant_manager,etudiantManager,model_gestion_etudiant,gestion_group_manager,1,1,1,1
+access_module_user,moduleUser,model_gestion_module,gestion_group_user,1,0,0,0
+access_module_manager,moduleManager,model_gestion_module,gestion_group_manager,1,1,1,1
+access_wizard_user,wizardUser,model_gestion_wizard,gestion_group_user,1,0,0,0
+access_wizard_manager,wizardManager,model_gestion_wizard,gestion_group_manager,1,1,1,1
+access_wizard_user1,wizardUser1,model_gestion_wizard_afficher_etudiants,gestion_group_user,1,0,0,0
+access_wizard_manager2,wizardManager2,model_gestion_wizard_afficher_etudiants,gestion_group_manager,1,1,1,1
+access_wizard_user3,wizardUser3,model_gestion_etudianttemp,gestion_group_user,1,0,0,0
+access_wizard_manager4,wizardManager4,model_gestion_etudianttemp,gestion_group_manager,1,1,1,1

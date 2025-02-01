@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<odoo>
+ <!-- LE Menu gestion des filières  -->
+ <menuitem id="menu_gestion" name="Gestion des filières" />
+  <!-- Action pour ouvrir la liste des filières  -->
+ <record id="action_gestion_filiere" model="ir.actions.act_window">
+ <field name="name">Liste des filieres</field>
+ <field name="res_model">gestion.filiere</field>
+ <field name="view_mode">tree,form</field>
+ <field name="help" type="html">
+	<p class="o_view_nocontent_smiling_face">
+	    Créer une nouvelle filière
+	</p>
+</field>
+ </record>
+ <!-- L'Option du Menu pour ouvrir la liste des Filières -->
+  <menuitem id="menu_gestion_filiere" 
+           name="Liste des Filières"
+           parent="menu_gestion"
+           action="action_gestion_filiere"
+           sequence="1"
+ />
+ <!-- Action pour ouvrir la liste des étudiants  -->
+ <record id="action_gestion_etudiant" model="ir.actions.act_window">
+ <field name="name">Liste des etudiants</field>
+ <field name="res_model">gestion.etudiant</field>
+ <field name="view_mode">tree,form,kanban</field>
+ </record>
+ <!-- L'Option du Menu pour ouvrir la liste des Etudiants -->
+  <menuitem id="menu_gestion_etudiant" 
+           name="Liste des Etudiants"
+           parent="menu_gestion"
+           action="action_gestion_etudiant"
+ />
+  <!-- Action pour ouvrir la liste des modules  -->
+ <record id="action_gestion_module" model="ir.actions.act_window">
+ <field name="name">Liste des modules</field>
+ <field name="res_model">gestion.module</field>
+ <field name="view_mode">tree,form</field>
+ </record>
+ <!-- L'Option du Menu pour ouvrir la liste des Modules -->
+  <menuitem id="menu_gestion_module" 
+           name="Liste des Modules"
+           parent="menu_gestion"
+           action="action_gestion_module"
+ />
+
+  <menuitem id="menu_my_wizard" 
+           name="Test Wizard"
+           parent="menu_gestion"
+           action="action_my_wizard"
+ />
+    <record id="action_wizard_afficher_etudiants" model="ir.actions.act_window">
+        <field name="name">Afficher les étudiants</field>
+        <field name="res_model">gestion.wizard_afficher_etudiants</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    
+ <menuitem id="menu_afficher_etudiants"
+          name="Afficher étudiants par filière"
+          action="action_wizard_afficher_etudiants"
+          parent="menu_gestion"/>
+</odoo>

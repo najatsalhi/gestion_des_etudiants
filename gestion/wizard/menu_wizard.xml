@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<odoo>
+<record id="action_my_wizard" model="ir.actions.act_window">
+    <field name="name">My Wizard</field>
+    <field name="res_model">gestion.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+</record>
+</odoo>
